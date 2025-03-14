@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "858103425196",
+    "project_id": "home-workout-v1",
+    "storage_bucket": "home-workout-v1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:858103425196:android:53b4d9150d9c9eb220d709",
+        "android_client_info": {
+          "package_name": "com.home.workout"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCf7JRHXlWse-WN9qjSiWz80jZZWKycDeM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:858103425196:android:fee6e61e01c31e3e20d709",
+        "android_client_info": {
+          "package_name": "fitnessapp.workout.homeworkout"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCf7JRHXlWse-WN9qjSiWz80jZZWKycDeM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

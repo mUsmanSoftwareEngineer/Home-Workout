@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="handler"
+            type="fitnessapp.workout.homeworkout.stretching.PerformWorkOutActivity.ClickHandler" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dark_black_seven_fit"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:background="@color/dark_black_seven_fit"
+            android:id="@+id/llAdView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp50"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:visibility="gone" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcyWorkoutStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="15"
+                tools:listitem="@layout/item_workout_status_indicator" />
+
+            <ProgressBar
+                android:id="@+id/progressBarTop"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:layout_marginTop="1dp"
+                android:progressDrawable="@drawable/progress_bar_linear_transparent"
+                tools:max="100"
+                tools:progress="50" />
+
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_5sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{(v)->handler.onBackClick()}"
+                android:padding="10dp"
+                android:src="@drawable/td_btn_back"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/back_btn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:onClick="@{(v)->handler.onBackClick()}"
+                android:padding="10dp"
+                android:src="@drawable/back_button"
+                app:layout_collapseMode="pin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/readyToGOTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/barlow_medium"
+                android:text="@string/ready_to_go"
+                android:textColor="@color/white_seven_fit"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <fitnessapp.workout.homeworkout.view.CBTextView
+                android:id="@+id/tvTitleText"
+                style="@style/txt_fff_20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/barlow_medium"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textAllCaps="true"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Ready to go" />
+
+<!--            <androidx.appcompat.widget.AppCompatImageView-->
+<!--                android:id="@+id/imgVideo"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginEnd="@dimen/_10sdp"-->
+<!--                android:onClick="@{(v)->handler.onVideoClick()}"-->
+<!--                android:src="@drawable/ic_video_round"-->
+<!--                android:visibility="gone"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/Info"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:onClick="@{(v)->handler.onWorkOutInfoClick()}"
+                android:padding="10dp"
+                android:src="@drawable/info"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/imgMusic"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgMusic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{(v)->handler.onMusicClick()}"
+                android:src="@drawable/ic_music"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/llMusic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_music_default_cover" />
+
+            <fitnessapp.workout.homeworkout.view.CTextView
+                android:id="@+id/tvMusicName"
+                style="@style/txt_000_16"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:onClick="@{(v)->handler.onSelectMusicClick()}"
+                android:text="@string/select_music" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgPrevMusic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:onClick="@{(v)->handler.onPrevMusicClick()}"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_music_pre" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgPauseMusic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:onClick="@{(v)->handler.onPauseMusicClick()}"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_music_pause"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgPlayMusic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:onClick="@{(v)->handler.onPauseMusicClick()}"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_music_play" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgNextMusic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{(v)->handler.onNextMusicClick()}"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_music_next" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <FrameLayout
+                android:id="@+id/llFrame"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.7">
+
+
+
+
+
+                <ViewFlipper
+                    android:id="@+id/viewFlipper"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:visibility="gone" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/dark_black_seven_fit"
+                    >
+
+
+                    <VideoView
+                        android:id="@+id/videoView"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+                <RelativeLayout
+                    android:layout_gravity="end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgSound"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:onClick="@{(v)->handler.onSoundClick()}"
+                        android:src="@drawable/music"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="10dp"
+                        />
+
+
+                    <TextView
+                        android:layout_toEndOf="@+id/imgSound"
+                        android:id="@+id/remainning_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:maxLines="1"
+                        android:gravity="center"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingTop="3dp"
+                        android:paddingBottom="3dp"
+                        android:textColor="@color/white_seven_fit"
+                        android:text="00:00"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/btn_red_round"
+                        android:fontFamily="@font/barlow_medium"
+                        android:layout_marginTop="15dp"
+                        />
+
+
+                </RelativeLayout>
+
+
+
+
+                <TextView
+                    android:id="@+id/tvAnimation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:shadowColor="@color/green_gradual_end_color"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="8"
+                    android:textColor="@color/green_gradual_start_color"
+                    android:textSize="@dimen/_60ssp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+
+            </FrameLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/llReadyToGo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="@{(v)->handler.onReadyToGoClick()}"
+                    android:paddingBottom="@dimen/_15sdp"
+                    android:visibility="gone"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/llWorkoutInfo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:onClick="@{(v)->handler.onReadyToGoClick()}"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <fitnessapp.workout.homeworkout.view.CBTextView
+                            style="@style/txt_000_22"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ready_to_go"
+                            android:textSize="30sp"
+                            android:visibility="gone" />
+
+                        <fitnessapp.workout.homeworkout.view.CBTextView
+                            android:id="@+id/tvExcNameReadyToGo"
+                            android:textColor="@color/white_seven_fit"
+                            android:textSize="24sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/barlow_medium"
+                            android:paddingStart="@dimen/_20sdp"
+                            tools:text="BRIDGE" />
+
+                        <ScrollView
+                            android:id="@+id/scrollable"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_100sdp"
+                            android:overScrollMode="never"
+                            >
+
+                            <TextView
+                                android:id="@+id/tvExcDescriptionReadyToGo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/barlow_regular"
+                                android:paddingStart="@dimen/_20sdp"
+                                android:paddingEnd="@dimen/_20sdp"
+                                android:paddingBottom="@dimen/_5sdp"
+                                android:textColor="@color/white_seven_fit"
+                                android:textSize="16sp"
+                                android:textStyle="normal"
+                                tools:text="BRIDGE" />
+
+                        </ScrollView>
+
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:onClick="@{(v)->handler.onWorkOutInfoClick()}"
+                        android:src="@drawable/ic_info"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/llWorkoutInfo"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                    <ProgressBar
+                        android:id="@+id/progressBarReadyToGo"
+                        style="@style/CircularDeterminateProgressBar"
+                        android:layout_width="@dimen/_160sdp"
+                        android:layout_height="@dimen/_140sdp"
+                        android:onClick="@{(v)->handler.onReadyToGoClick()}"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/llWorkoutInfo"
+                   />
+
+                    <fitnessapp.workout.homeworkout.view.CMTextView
+                        android:id="@+id/tvCountDownReadyToGO"
+                        style="@style/txt_000_22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{(v)->handler.onReadyToGoClick()}"
+                        android:textSize="35sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/progressBarReadyToGo"
+                        app:layout_constraintEnd_toEndOf="@+id/progressBarReadyToGo"
+                        app:layout_constraintStart_toStartOf="@+id/progressBarReadyToGo"
+                        app:layout_constraintTop_toTopOf="@+id/progressBarReadyToGo"
+                        tools:text="15" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="25dp"
+                        android:fontFamily="@font/barlow_medium"
+                        android:onClick="@{(v)->handler.onSkipReadyToGoClick()}"
+                        android:text="@string/skip"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white_seven_fit"
+                        android:textSize="22sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{(v)->handler.onSkipReadyToGoClick()}"
+                        android:src="@drawable/wp_ic_next_exercise"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/llWorkoutInfo" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <fitnessapp.workout.homeworkout.view.CBTextView
+                    android:id="@+id/tvExcName"
+                    style="@style/txt_000_20"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    tools:text="BRIDGE" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:id="@+id/llAfterStartWithTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:visibility="visible">
+
+
+                    <RelativeLayout
+                        android:id="@+id/llTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toTopOf="@id/progressBarWorkOut"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:orientation="horizontal"
+                            android:paddingStart="@dimen/_20sdp"
+                            android:paddingEnd="@dimen/_15sdp">
+
+                            <fitnessapp.workout.homeworkout.view.CBTextView
+                                android:id="@+id/tvCompletedSec"
+                                style="@style/txt_green_22"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/barlow_medium"
+                                android:textSize="45sp"
+                                tools:text="18&quot;" />
+
+                            <fitnessapp.workout.homeworkout.view.CBTextView
+                                android:id="@+id/tvTotalSec"
+                                style="@style/txt_000_22"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/barlow_medium"
+                                android:textSize="30sp"
+                                tools:text="/20&quot;" />
+
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/appCompatImageView2"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical|end"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:onClick="@{(v)->handler.onWorkOutInfoClick()}"
+                            android:src="@drawable/pause" />
+
+                    </RelativeLayout>
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgExcInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:onClick="@{(v)->handler.onWorkOutInfoClick()}"
+                        android:src="@drawable/ic_info"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/llTime" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBarWorkOut"
+                        style="?android:progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_5sdp"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:indeterminate="false"
+                        android:progress="0"
+                        android:progressDrawable="@drawable/progress_bar_linear"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgPrevWorkout"
+                        android:layout_width="68dp"
+                        android:layout_height="68dp"
+                        android:layout_marginStart="20dp"
+                        android:onClick="@{(v)->handler.onPrevExerciseClick()}"
+                        android:rotation="180"
+                        android:src="@drawable/next"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/progressBarWorkOut"
+                        app:layout_constraintStart_toStartOf="@+id/progressBarWorkOut"
+                        app:layout_constraintTop_toTopOf="@+id/progressBarWorkOut" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="68dp"
+                        android:layout_height="68dp"
+                        android:layout_marginEnd="20dp"
+                        android:onClick="@{(v)->handler.onNextExerciseClick()}"
+                        android:src="@drawable/next"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/progressBarWorkOut"
+                        app:layout_constraintEnd_toEndOf="@+id/progressBarWorkOut"
+                        app:layout_constraintTop_toTopOf="@+id/progressBarWorkOut" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/llAfterStartWithSteps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/llExcInfoStep"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/_20sdp"
+                        android:paddingEnd="@dimen/_15sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical">
+
+                            <fitnessapp.workout.homeworkout.view.CBTextView
+                                android:id="@+id/tvExcNameStep"
+                                style="@style/txt_000_20"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxWidth="@dimen/_180sdp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/llTime"
+                                tools:text="Bottom Leg Lift Lift" />
+
+                            <fitnessapp.workout.homeworkout.view.CBTextView
+                                style="@style/txt_green_18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="bottom"
+                                android:paddingStart="@dimen/_10sdp"
+                                android:paddingEnd="@dimen/_10sdp"
+                                android:text="X" />
+
+                            <fitnessapp.workout.homeworkout.view.CBTextView
+                                android:id="@+id/tvTotalStep"
+                                style="@style/txt_green_22"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                tools:text="12" />
+
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="@{(v)->handler.onWorkOutInfoClick()}"
+                            android:src="@drawable/ic_info"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/llTime" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llCompleteExce"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:background="@drawable/btn_bg_round_gradiant"
+                        android:onClick="@{(v)->handler.onNextExerciseClick()}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/llExcInfoStep">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_40sdp"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_40sdp"
+                            android:layout_marginBottom="@dimen/_15sdp"
+                            android:src="@drawable/wp_ic_fab_check" />
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{(v)->handler.onNextExerciseClick()}"
+                        android:src="@drawable/wp_ic_next_exercise"
+                        android:tint="@color/green_text"
+                        app:layout_constraintBottom_toBottomOf="@+id/llCompleteExce"
+                        app:layout_constraintEnd_toEndOf="@+id/llExcInfoStep"
+                        app:layout_constraintTop_toTopOf="@+id/llCompleteExce" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

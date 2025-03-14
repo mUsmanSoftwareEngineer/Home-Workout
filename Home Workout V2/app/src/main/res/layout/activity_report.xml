@@ -1,0 +1,1104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="handler"
+            type="fitnessapp.workout.homeworkout.stretching.ReportActivity.ClickHandler" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/topbar"
+                layout="@layout/topbar" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/primary_dark" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:overScrollMode="never"
+            android:background="@color/dark_black_seven_fit">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:cardBackgroundColor="@color/light_black_seven_fit"
+                    app:cardCornerRadius="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/_15sdp"
+                        android:paddingTop="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_15sdp"
+                        android:paddingBottom="@dimen/_10sdp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <fitnessapp.workout.homeworkout.view.CBTextView
+                                android:id="@+id/tvWorkOuts"
+                                style="@style/txt_green_22"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="125"
+
+                                android:textStyle="bold" />
+
+                            <fitnessapp.workout.homeworkout.view.CBTextView
+                                style="@style/txt_999_14"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:text="@string/workouts"
+                                android:textAllCaps="true"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <fitnessapp.workout.homeworkout.view.CBTextView
+                                android:id="@+id/tvCalorie"
+                                style="@style/txt_green_22"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="12"
+
+                                android:textStyle="bold" />
+
+                            <fitnessapp.workout.homeworkout.view.CBTextView
+                                style="@style/txt_999_14"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:text="@string/calorie"
+                                android:textAllCaps="true"
+
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <fitnessapp.workout.homeworkout.view.CBTextView
+                                android:id="@+id/tvMinutes"
+                                style="@style/txt_green_22"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="12"
+                                android:textStyle="bold" />
+
+                            <fitnessapp.workout.homeworkout.view.CBTextView
+                                style="@style/txt_999_14"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:text="@string/minute"
+                                android:textAllCaps="true"
+
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/gray_light_"
+                    android:visibility="gone" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:cardBackgroundColor="@color/green_seven_fit"
+                    app:cardCornerRadius="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/_10sdp">
+
+                            <fitnessapp.workout.homeworkout.view.CTextView
+                                style="@style/txt_333_16"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/history" />
+
+                            <fitnessapp.workout.homeworkout.view.CTextView
+                                style="@style/txt_green_16"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:onClick="@{(v)->handler.onRecordsClick()}"
+                                android:text="@string/records"
+                                android:shadowColor="@android:color/darker_gray"
+                                android:shadowDx="0"
+                                android:shadowDy="0"
+                                android:shadowRadius="50"
+                                android:textAllCaps="true" />
+
+
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvWeekGoal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/light_black_seven_fit"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/_10sdp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:itemCount="7"
+                            tools:listitem="@layout/item_report_week_day" />
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <fitnessapp.workout.homeworkout.view.CTextView
+                    style="@style/txt_green_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:onClick="@{(v)->handler.onRecordsClick()}"
+                    android:text="@string/records"
+                    android:textAllCaps="true"
+                    android:visibility="gone" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gray_light_____"
+                    android:minHeight="@dimen/_10sdp"
+                    android:visibility="gone">
+
+                </FrameLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:cardBackgroundColor="@color/light_black_seven_fit"
+                    app:cardCornerRadius="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/_10sdp">
+
+                            <fitnessapp.workout.homeworkout.view.CTextView
+                                style="@style/txt_333_16"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textStyle="bold"
+                                android:text="@string/weight" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:onClick="@{(v)->handler.onAddWeightClick()}"
+                                android:padding="@dimen/_5sdp"
+                                android:src="@drawable/ic_baseline_add_24" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:gravity="center_vertical"
+                            android:visibility="gone"
+                            android:orientation="horizontal">
+
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <fitnessapp.workout.homeworkout.view.CTextView
+                                    android:id="@+id/tvLastTitle"
+                                    style="@style/txt_999_14"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/last_30_days"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <fitnessapp.workout.homeworkout.view.CTextView
+                                    android:id="@+id/tvAvgWeight"
+                                    style="@style/txt_fff_14"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_3sdp"
+                                    android:background="@drawable/bg_green_radius_5"
+                                    android:paddingStart="@dimen/_15sdp"
+                                    android:paddingTop="@dimen/_8sdp"
+                                    android:paddingEnd="@dimen/_15sdp"
+                                    android:paddingBottom="@dimen/_8sdp"
+                                    android:text="-0.00 kg" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <fitnessapp.workout.homeworkout.view.CTextView
+                            android:id="@+id/graph_kg"
+                            style="@style/txt_000_14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:text="@string/kg" />
+
+                        <com.github.mikephil.charting.charts.CombinedChart
+                            android:id="@+id/chartWeight"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_220sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center"
+                            android:layout_marginTop="10dp"
+                            >
+
+                            <ImageView
+                                android:layout_width="8dp"
+                                android:layout_height="8dp"
+                                android:background="@color/green_seven_fit"
+                                android:padding="@dimen/_3sdp"
+                                android:layout_marginTop="1dp"
+                                />
+
+                            <fitnessapp.workout.homeworkout.view.CTextView
+                                android:textColor="@color/white_seven_fit"
+                                android:fontFamily="@font/barlow_medium"
+                                android:textSize="14sp"
+                                android:layout_marginStart="3dp"
+                                android:layout_gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/date" />
+
+                        </LinearLayout>
+
+<!--                        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:visibility="gone"-->
+<!--                            android:gravity="center">-->
+
+<!--                            <fitnessapp.workout.homeworkout.view.CTextView-->
+<!--                                android:id="@+id/tvCurrentTitle"-->
+<!--                                style="@style/txt_999_14"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="@string/current"-->
+<!--                                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                                app:layout_constraintStart_toStartOf="parent"-->
+<!--                                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginTop="@dimen/_3sdp"-->
+<!--                                android:orientation="horizontal"-->
+<!--                                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                                app:layout_constraintStart_toStartOf="parent"-->
+<!--                                app:layout_constraintTop_toBottomOf="@id/tvCurrentTitle">-->
+
+<!--                                <fitnessapp.workout.homeworkout.view.CBTextView-->
+<!--                                    android:id="@+id/tvCurrentWeight"-->
+<!--                                    style="@style/txt_green_22"-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:text="0.00"-->
+<!--                                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                                    app:layout_constraintTop_toBottomOf="@id/tvCurrentTitle" />-->
+
+<!--                                <fitnessapp.workout.homeworkout.view.CTextView-->
+<!--                                    android:id="@+id/tvCurretUnit"-->
+<!--                                    style="@style/txt_333_14"-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginStart="@dimen/_5sdp"-->
+<!--                                    android:textAllCaps="false"-->
+<!--                                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                                    app:layout_constraintTop_toBottomOf="@id/tvCurrentTitle"-->
+<!--                                    tools:text="kg" />-->
+
+<!--                            </LinearLayout>-->
+
+
+<!--                        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            >
+
+                            <fitnessapp.workout.homeworkout.view.CTextView
+                                android:id="@+id/tvCurrentTitle"
+                                style="@style/txt_666_16"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/current" />
+
+
+<!--                            <fitnessapp.workout.homeworkout.view.CBTextView-->
+<!--                                android:id="@+id/tvCurrentWeight"-->
+<!--                                style="@style/txt_666_16"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                tools:text="80.00 Kg" />-->
+
+                            <fitnessapp.workout.homeworkout.view.CTextView
+                                android:id="@+id/tvCurrentWeight"
+                                style="@style/txt_666_16"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                tools:text="80.00 Kg" />
+
+                            <fitnessapp.workout.homeworkout.view.CTextView
+                                android:id="@+id/tvCurretUnit"
+                                style="@style/txt_333_14"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:textAllCaps="false"
+                                android:visibility="gone"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/tvCurrentTitle"
+                                tools:text="kg" />
+
+                        </LinearLayout>
+
+
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingEnd="@dimen/_10sdp">
+
+                            <fitnessapp.workout.homeworkout.view.CTextView
+                                style="@style/txt_666_16"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/heaviest" />
+
+                            <fitnessapp.workout.homeworkout.view.CTextView
+                                android:id="@+id/tvHeaviestWeight"
+                                style="@style/txt_666_16"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                tools:text="80.00 Kg" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_15sdp"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingEnd="@dimen/_10sdp">
+
+                            <fitnessapp.workout.homeworkout.view.CTextView
+                                style="@style/txt_666_16"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/lightest" />
+
+                            <fitnessapp.workout.homeworkout.view.CTextView
+                                android:id="@+id/tvLightestWeight"
+                                style="@style/txt_666_16"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                tools:text="80.00 Kg" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_10sdp"
+                    android:visibility="gone"
+                    android:background="@color/gray_light_____" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:cardBackgroundColor="@color/light_black_seven_fit"
+                    app:cardCornerRadius="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_10sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <fitnessapp.workout.homeworkout.view.CMTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white_seven_fit"
+                                android:textSize="16sp"
+                                android:fontFamily="@font/barlow_medium"
+                                android:text="BMI(kg/m\u00B2) : " />
+
+                            <fitnessapp.workout.homeworkout.view.CBTextView
+                                android:id="@+id/tvBMI"
+                                style="@style/txt_000_20"
+                                android:layout_width="0dp"
+                                android:visibility="gone"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                tools:text="26.79" />
+
+                            <fitnessapp.workout.homeworkout.view.CTextView
+                                android:textSize="16sp"
+                                android:fontFamily="@font/barlow_medium"
+                                android:textColor="@color/green_seven_fit"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:onClick="@{(v)->handler.onEditBMIClick()}"
+                                android:paddingStart="@dimen/_10sdp"
+                                android:text="@string/edit"
+                                android:gravity="end"
+                                android:textAllCaps="true" />
+
+                        </LinearLayout>
+
+<!--                        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                            android:id="@+id/clBMIGraphView"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginTop="@dimen/_15sdp"-->
+<!--                            android:paddingStart="@dimen/_7sdp"-->
+<!--                            android:paddingEnd="@dimen/_7sdp">-->
+
+<!--                            <RelativeLayout-->
+<!--                                android:id="@+id/rlBMI"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                                app:layout_constraintStart_toStartOf="parent"-->
+<!--                                app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                                &lt;!&ndash; Bmi Color view &ndash;&gt;-->
+<!--                                <LinearLayout-->
+<!--                                    android:id="@+id/lnyBmiGraph"-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="40dp"-->
+<!--                                    android:layout_alignParentBottom="true"-->
+<!--                                    android:layout_marginTop="@dimen/_2sdp"-->
+<!--                                    android:layout_marginBottom="@dimen/_10sdp"-->
+<!--                                    android:background="@color/white"-->
+<!--                                    android:orientation="horizontal"-->
+<!--                                    android:weightSum="7">-->
+
+<!--                                    <View-->
+<!--                                        android:layout_width="0dp"-->
+<!--                                        android:layout_height="match_parent"-->
+<!--                                        android:layout_marginEnd="@dimen/_2sdp"-->
+<!--                                        android:layout_weight="0.5"-->
+<!--                                        android:background="@color/colorFirst" />-->
+
+<!--                                    <View-->
+<!--                                        android:layout_width="0dp"-->
+<!--                                        android:layout_height="match_parent"-->
+<!--                                        android:layout_marginEnd="@dimen/_2sdp"-->
+<!--                                        android:layout_weight="1.5"-->
+<!--                                        android:background="@color/colorSecond" />-->
+
+<!--                                    <View-->
+<!--                                        android:layout_width="0dp"-->
+<!--                                        android:layout_height="match_parent"-->
+<!--                                        android:layout_marginEnd="@dimen/_2sdp"-->
+<!--                                        android:layout_weight="2"-->
+<!--                                        android:background="@color/colorThird" />-->
+
+<!--                                    <View-->
+<!--                                        android:layout_width="0dp"-->
+<!--                                        android:layout_height="match_parent"-->
+<!--                                        android:layout_marginEnd="@dimen/_2sdp"-->
+<!--                                        android:layout_weight="1"-->
+<!--                                        android:background="@color/colorFour" />-->
+
+<!--                                    <View-->
+<!--                                        android:layout_width="0dp"-->
+<!--                                        android:layout_height="match_parent"-->
+<!--                                        android:layout_marginEnd="@dimen/_2sdp"-->
+<!--                                        android:layout_weight="1"-->
+<!--                                        android:background="@color/colorFive" />-->
+
+<!--                                    <View-->
+<!--                                        android:layout_width="0dp"-->
+<!--                                        android:layout_height="match_parent"-->
+<!--                                        android:layout_weight="1"-->
+<!--                                        android:background="@color/colorSix" />-->
+
+<!--                                </LinearLayout>-->
+
+<!--                                &lt;!&ndash; Bmi Blank view and display bmi percentage &ndash;&gt;-->
+<!--                                <LinearLayout-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="65dp"-->
+<!--                                    android:orientation="horizontal"-->
+<!--                                    android:weightSum="7">-->
+
+<!--                                    <View-->
+<!--                                        android:id="@+id/blankView1"-->
+<!--                                        android:layout_width="0dp"-->
+<!--                                        android:layout_height="match_parent"-->
+<!--                                        android:layout_weight="0" />-->
+
+<!--                                    <RelativeLayout-->
+<!--                                        android:layout_width="wrap_content"-->
+<!--                                        android:layout_height="match_parent"-->
+<!--                                        android:layout_weight="0.1">-->
+
+<!--                                        <fitnessapp.workout.homeworkout.view.CTextView-->
+<!--                                            android:id="@+id/txtBmiGrade"-->
+<!--                                            style="@style/txt_000_14"-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="wrap_content"-->
+<!--                                            android:text="0.0" />-->
+
+<!--                                        <View-->
+<!--                                            android:id="@+id/BmiPosition"-->
+<!--                                            android:layout_width="5dp"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:layout_below="@+id/txtBmiGrade"-->
+<!--                                            android:layout_centerHorizontal="true"-->
+<!--                                            android:background="@color/black" />-->
+<!--                                    </RelativeLayout>-->
+
+<!--                                    <View-->
+<!--                                        android:id="@+id/blankView3"-->
+<!--                                        android:layout_width="2dp"-->
+<!--                                        android:layout_height="match_parent"-->
+<!--                                        android:layout_weight="0.0"-->
+<!--                                        android:visibility="gone" />-->
+
+<!--                                </LinearLayout>-->
+
+<!--                            </RelativeLayout>-->
+
+<!--                            &lt;!&ndash; Bmi bottom text &ndash;&gt;-->
+<!--                            <LinearLayout-->
+<!--                                android:id="@+id/llBmiNumberGraph"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:orientation="horizontal"-->
+<!--                                android:weightSum="7"-->
+<!--                                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                                app:layout_constraintStart_toStartOf="parent"-->
+<!--                                app:layout_constraintTop_toBottomOf="@id/rlBMI">-->
+
+<!--                                <fitnessapp.workout.homeworkout.view.CTextView-->
+<!--                                    style="@style/txt_000_14"-->
+<!--                                    android:layout_width="0dp"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginEnd="@dimen/_2sdp"-->
+<!--                                    android:layout_weight="0.4"-->
+<!--                                    android:text="15" />-->
+
+<!--                                <fitnessapp.workout.homeworkout.view.CTextView-->
+<!--                                    style="@style/txt_000_14"-->
+<!--                                    android:layout_width="0dp"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginEnd="@dimen/_2sdp"-->
+<!--                                    android:layout_weight="1.3"-->
+<!--                                    android:text="16" />-->
+
+<!--                                <fitnessapp.workout.homeworkout.view.CTextView-->
+<!--                                    style="@style/txt_000_14"-->
+<!--                                    android:layout_width="0dp"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginEnd="@dimen/_2sdp"-->
+<!--                                    android:layout_weight="2.1"-->
+<!--                                    android:text="18.5" />-->
+
+<!--                                <fitnessapp.workout.homeworkout.view.CTextView-->
+<!--                                    style="@style/txt_000_14"-->
+<!--                                    android:layout_width="0dp"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginEnd="@dimen/_2sdp"-->
+<!--                                    android:layout_weight="1.1"-->
+<!--                                    android:text="25" />-->
+
+<!--                                <fitnessapp.workout.homeworkout.view.CTextView-->
+<!--                                    style="@style/txt_000_14"-->
+<!--                                    android:layout_width="0dp"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginEnd="@dimen/_2sdp"-->
+<!--                                    android:layout_weight="1"-->
+<!--                                    android:text="30" />-->
+
+<!--                                <fitnessapp.workout.homeworkout.view.CTextView-->
+<!--                                    style="@style/txt_000_14"-->
+<!--                                    android:layout_width="0dp"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginEnd="@dimen/_2sdp"-->
+<!--                                    android:layout_weight="0.80"-->
+<!--                                    android:text="35" />-->
+
+<!--                                <fitnessapp.workout.homeworkout.view.CTextView-->
+<!--                                    style="@style/txt_000_14"-->
+<!--                                    android:layout_width="0dp"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginEnd="@dimen/_2sdp"-->
+<!--                                    android:layout_weight="0.35"-->
+<!--                                    android:text="40" />-->
+
+<!--                            </LinearLayout>-->
+
+<!--                            <fitnessapp.workout.homeworkout.view.CTextView-->
+<!--                                android:id="@+id/tvWeightString"-->
+<!--                                style="@style/txt_green_16"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginTop="@dimen/_2sdp"-->
+<!--                                android:text="demo text"-->
+<!--                                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                                app:layout_constraintStart_toStartOf="parent"-->
+<!--                                app:layout_constraintTop_toBottomOf="@id/llBmiNumberGraph" />-->
+
+
+<!--                        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clBMIGraphView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible">
+
+                            <RelativeLayout
+                                android:id="@+id/rlBMI"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <!-- Bmi Color view -->
+                                <LinearLayout
+                                    android:id="@+id/lnyBmiGraph"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="25dp"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginTop="@dimen/_2sdp"
+                                    android:orientation="horizontal"
+                                    android:weightSum="7">
+
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginEnd="@dimen/_2sdp"
+                                        android:layout_weight="0.5"
+                                        android:background="@drawable/bmi_round_corner_1" />
+
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginEnd="@dimen/_2sdp"
+                                        android:layout_weight="1.5"
+                                        android:background="@color/colorSecond" />
+
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginEnd="@dimen/_2sdp"
+                                        android:layout_weight="2"
+                                        android:background="@color/colorThird" />
+
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginEnd="@dimen/_2sdp"
+                                        android:layout_weight="1"
+                                        android:background="@color/colorFour" />
+
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginEnd="@dimen/_2sdp"
+                                        android:layout_weight="1"
+                                        android:background="@color/colorFive" />
+
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/bmi_round_corner_last" />
+
+                                </LinearLayout>
+
+                                <!-- Bmi Blank view and display bmi percentage -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:orientation="horizontal"
+                                    android:weightSum="7">
+
+                                    <View
+                                        android:id="@+id/blankView1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="0" />
+
+                                    <RelativeLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="0.1">
+
+                                        <fitnessapp.workout.homeworkout.view.CTextView
+                                            android:id="@+id/txtBmiGrade"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/barlow_medium"
+                                            android:text="0.0"
+                                            android:textColor="@color/white_seven_fit"
+                                            android:textSize="14sp" />
+
+                                        <View
+                                            android:id="@+id/BmiPosition"
+                                            android:layout_width="3dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_below="@+id/txtBmiGrade"
+                                            android:layout_centerHorizontal="true"
+                                            android:background="@color/white_seven_fit" />
+                                    </RelativeLayout>
+
+                                    <View
+                                        android:id="@+id/blankView3"
+                                        android:layout_width="2dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="0.0"
+                                        android:visibility="gone" />
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                            <!-- Bmi bottom text -->
+                            <LinearLayout
+                                android:id="@+id/llBmiNumberGraph"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="7"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/rlBMI">
+
+                                <fitnessapp.workout.homeworkout.view.CTextView
+                                    style="@style/txt_000_14"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/_2sdp"
+                                    android:layout_weight="0.4"
+                                    android:text="15" />
+
+                                <fitnessapp.workout.homeworkout.view.CTextView
+                                    style="@style/txt_000_14"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/_2sdp"
+                                    android:layout_weight="1.3"
+                                    android:text="16" />
+
+                                <fitnessapp.workout.homeworkout.view.CTextView
+                                    style="@style/txt_000_14"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/_2sdp"
+                                    android:layout_weight="2.1"
+                                    android:text="18.5" />
+
+                                <fitnessapp.workout.homeworkout.view.CTextView
+                                    style="@style/txt_000_14"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/_2sdp"
+                                    android:layout_weight="1.1"
+                                    android:text="25" />
+
+                                <fitnessapp.workout.homeworkout.view.CTextView
+                                    style="@style/txt_000_14"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/_2sdp"
+                                    android:layout_weight="1"
+                                    android:text="30" />
+
+                                <fitnessapp.workout.homeworkout.view.CTextView
+                                    style="@style/txt_000_14"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/_2sdp"
+                                    android:layout_weight="0.80"
+                                    android:text="35" />
+
+                                <fitnessapp.workout.homeworkout.view.CTextView
+                                    style="@style/txt_000_14"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/_2sdp"
+                                    android:layout_weight="0.35"
+                                    android:text="40" />
+
+                            </LinearLayout>
+
+                            <fitnessapp.workout.homeworkout.view.CTextView
+                                android:id="@+id/tvWeightString"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:fontFamily="@font/barlow_medium"
+                                android:text="demo text"
+                                android:textColor="@color/white_seven_fit"
+                                android:textSize="16sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/llBmiNumberGraph" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_15sdp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:layout_marginBottom="@dimen/_15sdp"
+                                android:onClick="@{(v)->handler.onEditBMIClick()}"
+                                android:src="@drawable/edit"
+                                android:visibility="gone"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/llBmiNumberGraph" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+
+                <View
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/gray_light_" />
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_10sdp">
+
+                    <fitnessapp.workout.homeworkout.view.CTextView
+                        style="@style/txt_333_16"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/height" />
+
+                    <fitnessapp.workout.homeworkout.view.CTextView
+                        style="@style/txt_green_16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{(v)->handler.onEditBMIClick()}"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:text="@string/edit"
+                        android:textAllCaps="true" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_10sdp">
+
+                    <fitnessapp.workout.homeworkout.view.CTextView
+                        style="@style/txt_green_16"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/current" />
+
+                    <fitnessapp.workout.homeworkout.view.CEditTextView
+                        android:id="@+id/editCurrHeightCM"
+                        style="@style/txt_666_16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:hint="0.0CM"
+                        android:onClick="@{(v)->handler.onEditBMIClick()}"
+                        tools:text="172.65 CM" />
+
+                    <fitnessapp.workout.homeworkout.view.CEditTextView
+                        android:id="@+id/editCurrHeightFT"
+                        style="@style/txt_666_16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:hint="0.0 FT"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:onClick="@{(v)->handler.onEditBMIClick()}"
+                        android:singleLine="true"
+                        android:visibility="gone" />
+
+                    <fitnessapp.workout.homeworkout.view.CEditTextView
+                        android:id="@+id/editCurrHeightIn"
+                        style="@style/txt_666_16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:focusable="false"
+                        android:hint="0.0 IN"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:onClick="@{(v)->handler.onEditBMIClick()}"
+                        android:singleLine="true"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <RelativeLayout
+            android:id="@+id/llAdView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp50"
+            android:layout_gravity="center"
+            android:background="@color/dark_black_seven_fit"
+            android:gravity="center"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/llAdViewFacebook"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp50"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</layout>

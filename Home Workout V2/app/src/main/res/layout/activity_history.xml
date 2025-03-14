@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="handler"
+            type="fitnessapp.workout.homeworkout.stretching.HistoryActivity.ClickHandler" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dark_black_seven_fit"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <include
+                android:id="@+id/topbar"
+                layout="@layout/topbar" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/primary_dark" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/dark_black_seven_fit"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/dark_black_seven_fit"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_4sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgMonthPrev"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:padding="10dp"
+                        android:onClick="@{(v)->handler.onPrevClick()}"
+                        android:tint="@color/white_seven_fit"
+                        android:src="@drawable/ic_calendar_left_arrow_enabled" />
+
+                    <fitnessapp.workout.homeworkout.view.CTextView
+                        android:id="@+id/tvMonthYear"
+                        style="@style/txt_000_16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:fontFamily="@font/barlow_medium"
+                        android:text="2020 / 05" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgbtnMonthNext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:padding="10dp"
+                        android:onClick="@{(v)->handler.onNextClick()}"
+                        android:tint="@color/white_seven_fit"
+                        android:src="@drawable/ic_calendar_right_arrow_enabled" />
+
+                </LinearLayout>
+
+
+                <fitnessapp.workout.homeworkout.compactcalender.CompactCalendarView
+                    android:id="@+id/compatCalenderView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_250sdp"
+                    app:compactCalendarEventDayTextColor="@color/white"
+                    app:compactCalendarBackgroundColor="@color/dark_black_seven_fit"
+                    app:compactCalendarCurrentDayBackgroundColor="@color/green_seven_fit"
+                    app:compactCalendarCurrentDayIndicatorStyle="no_fill_large_indicator"
+                    app:compactCalendarCurrentDayTextColor="@color/white_seven_fit"
+                    app:compactCalendarCurrentSelectedDayBackgroundColor="@color/green_seven_fit"
+                    app:compactCalendarCurrentSelectedDayTextColor="@color/white_seven_fit"
+                    app:compactCalendarDisplayOtherMonthDays="true"
+                    app:compactCalendarEventIndicatorStyle="fill_large_indicator"
+                    app:compactCalendarOtherMonthDaysTextColor="@color/green_seven_fit"
+                    app:compactCalendarShouldSelectFirstDayOfMonthOnScroll="false"
+                    app:compactCalendarTargetHeight="@dimen/_250sdp"
+                    app:compactCalendarTextColor="@color/white_seven_fit"
+                    app:compactCalendarTextSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_5sdp"
+                    android:background="@color/dark_black_seven_fit" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    tools:listitem="@layout/item_history_parent"/>
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <RelativeLayout
+            android:id="@+id/llAdView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp50"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:id="@+id/llAdViewFacebook"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp50"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+
+</layout>

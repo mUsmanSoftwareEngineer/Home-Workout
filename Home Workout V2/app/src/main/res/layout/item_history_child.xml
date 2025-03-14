@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_black_seven_fit"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgPlanType"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/muscle_img" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+
+                <fitnessapp.workout.homeworkout.view.CTextView
+                    android:id="@+id/tvName"
+                    style="@style/txt_000_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginBottom="@dimen/_3sdp"
+                    android:text="Plan 1"
+                    android:textAllCaps="true" />
+
+                <fitnessapp.workout.homeworkout.view.CTextView
+                    android:id="@+id/tvDateTime"
+                    style="@style/txt_999_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="May 21, 8:15AM" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/timer"
+                        android:paddingTop="@dimen/_4sdp"
+                        android:paddingBottom="@dimen/_4sdp"
+                        android:paddingEnd="@dimen/_4sdp"
+                        />
+
+                    <fitnessapp.workout.homeworkout.view.CTextView
+                        android:id="@+id/tvDuration"
+                        style="@style/txt_666_12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        tools:text="00:11" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/fire"
+                        android:paddingTop="@dimen/_4sdp"
+                        android:paddingBottom="@dimen/_4sdp"
+                        android:paddingEnd="@dimen/_4sdp"
+                        android:paddingStart="0dp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        />
+
+                    <fitnessapp.workout.homeworkout.view.CTextView
+                        android:id="@+id/tvCalorie"
+                        style="@style/txt_666_12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        tools:text="0.2 Calorie" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:background="@color/gray_light__" />
+
+    </LinearLayout>
+
+</layout>

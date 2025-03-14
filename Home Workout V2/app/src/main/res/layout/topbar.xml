@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="isBackShow"
+            type="java.lang.Boolean" />
+
+        <variable
+            name="isDiscoverShow"
+            type="java.lang.Boolean" />
+
+        <variable
+            name="isMenuShow"
+            type="java.lang.Boolean" />
+
+        <variable
+            name="isLogoutShow"
+            type="java.lang.Boolean" />
+
+        <variable
+            name="isInterNetAvailable"
+            type="java.lang.Boolean" />
+
+        <variable
+            name="isInterNetAvailableShow"
+            type="java.lang.Boolean" />
+
+        <variable
+            name="isHomeShow"
+            type="java.lang.Boolean" />
+
+        <variable
+            name="isSaveShow"
+            type="java.lang.Boolean" />
+
+        <variable
+            name="isMoreShow"
+            type="java.lang.Boolean" />
+
+        <variable
+            name="topBarClickListener"
+            type="fitnessapp.workout.homeworkout.stretching.interfaces.TopBarClickListener" />
+
+        <variable
+            name="isSyncingShow"
+            type="java.lang.Boolean" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:background="@color/dark_black_seven_fit"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="5dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/toolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="60dp"
+                android:visibility="gone"
+                android:gravity="center">
+
+                <fitnessapp.workout.homeworkout.view.CTextView
+                    android:id="@+id/tvTitleText_"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="22sp"
+                    android:textColor="@color/white_seven_fit"
+                    android:fontFamily="@font/barlow_medium"
+                    android:textStyle="bold"
+                    android:singleLine="true"
+                    android:text="@string/app_name" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgMenu"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:contentDescription="@null"
+                android:src="@drawable/drawer"
+                android:tint="@color/white"
+                android:visibility="@{isMenuShow ? View.VISIBLE : View.GONE, default=visible}" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgBack_"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="left|center_vertical"
+                android:contentDescription="@null"
+                android:padding="10dp"
+                android:onClick="@{(v)->topBarClickListener.onTopBarClickListener(v,@string/back)}"
+                android:src="@drawable/back_button"
+                android:scaleType="fitCenter"
+                android:visibility="@{isBackShow ? View.VISIBLE : View.GONE, default=gone}" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="35dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:contentDescription="@null"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:onClick="@{(v)->topBarClickListener.onTopBarClickListener(v,@string/menu_setting)}"
+                    android:src="@drawable/settings"
+                    android:visibility="@{isDiscoverShow ? View.VISIBLE : View.GONE, default=visible}" />
+
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="35dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:contentDescription="@null"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:onClick="@{(v)->topBarClickListener.onTopBarClickListener(v,@string/menu_reminder)}"
+                    android:src="@drawable/notification"
+                    android:visibility="@{isDiscoverShow ? View.VISIBLE : View.GONE, default=visible}" />
+
+
+                <!--<androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:contentDescription="@null"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_internet_not_connected"
+                    android:visibility="@{isInterNetAvailable ? View.GONE : View.VISIBLE, default=gone}" />-->
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:contentDescription="@null"
+                    android:onClick="@{(v)->topBarClickListener.onTopBarClickListener(v,@string/more)}"
+                    android:src="@drawable/ic_more"
+                    android:padding="10dp"
+                    android:visibility="@{isMoreShow ? View.VISIBLE : View.GONE, default=gone}" />
+
+                <fitnessapp.workout.homeworkout.view.CMTextView
+                    style="@style/txt_fff_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:onClick="@{(v)->topBarClickListener.onTopBarClickListener(v,@string/save)}"
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="5dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/save"
+                    android:textAllCaps="true"
+                    android:visibility="@{isSaveShow ? View.VISIBLE : View.GONE, default=gone}" />
+
+
+            </LinearLayout>
+            <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1px"-->
+            <!--android:layout_gravity="bottom"-->
+            <!--android:background="@color/gray_light"/>-->
+
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</layout>
